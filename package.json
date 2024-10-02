@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "concurrently --names frontend,backend \"npm:devf\" \"npm:devb\"",
     "devf": "vite --host",
-    "devb": "concurrently --names tsc,tse,nodemon --prefix-colors blue,yellow,green \"tsc --project tsconfig.backend.json --watch\" \"tse -rwid dist/backend\" \"nodemon -r dotenv/config dist/backend/main.js\"",
+    "devb": "npm:buildb && concurrently --names tsc,tse,nodemon --prefix-colors blue,yellow,green \"tsc --project tsconfig.backend.json --watch\" \"tse -rwid dist/backend\" \"nodemon -r dotenv/config dist/backend/main.js\"",
     "buildf": "vue-tsc --project tsconfig.frontend.json && vite build",
+    "buildb": "tsc --project tsconfig.backend.json",
     "preview": "vite preview"
   },
   "dependencies": {
