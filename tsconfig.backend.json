@@ -1,0 +1,21 @@
+{
+    "include": ["src/backend/**/*.ts"],
+    "compilerOptions": {
+        "outDir": "dist/backend",
+        "target": "ES6",
+        "module": "ES2022",
+        "strict": true,
+        "noUnusedLocals": true,
+        "noFallthroughCasesInSwitch": true,
+        "allowSyntheticDefaultImports": true,
+        "skipLibCheck": true
+    },
+    "watchOptions": {
+        "watchFile": "useFsEvents",
+        "watchDirectory": "useFsEvents",
+        "fallbackPolling": "dynamicPriority",
+        "synchronousWatchDirectory": true,
+        "excludeDirectories": [],
+        "excludeFiles": []
+    }
+}

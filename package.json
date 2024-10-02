@@ -1,0 +1,31 @@
+{
+  "name": "@stormwatch/fullstack-template",
+  "private": false,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently --names frontend,backend \"npm:devf\" \"npm:devb\"",
+    "devf": "vite --host",
+    "devb": "concurrently --names tsc,tse,nodemon --prefix-colors blue,yellow,green \"tsc --project tsconfig.backend.json --watch\" \"tse -rwid dist/backend\" \"nodemon -r dotenv/config dist/backend/main.js\"",
+    "buildf": "vue-tsc --project tsconfig.frontend.json && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "vue": "^3.4.37"
+  },
+  "devDependencies": {
+    "@stormwatch/tse": "^1.0.0",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.7.4",
+    "@vitejs/plugin-vue": "^5.1.2",
+    "concurrently": "^9.0.1",
+    "dotenv": "^16.4.5",
+    "nodemon": "^3.1.7",
+    "typescript": "^5.5.3",
+    "vite": "^5.4.1",
+    "vue-tsc": "^2.0.29"
+  }
+}

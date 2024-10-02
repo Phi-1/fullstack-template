@@ -1,0 +1,4 @@
+{
+    "watch": "dist/backend",
+    "delay": 2100
+}
